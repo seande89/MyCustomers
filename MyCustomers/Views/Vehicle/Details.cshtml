@@ -1,0 +1,47 @@
+﻿@model VehiclesListViewModel // Specify the model type for this view
+
+@{
+    ViewData["Title"] = "Vehicle Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="p-5">
+    <table id="vehicle-table" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>VIN/Chassis</th>
+                <th>License Plate</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in Model.vehicles)
+            {
+                <tr>
+                    <td>@vehicle.VehicleMake.Brand</td> <!-- Display Brand -->
+                    <td>@vehicle.VehicleModel</td> <!-- Display VehicleModele -->
+                    <td>@vehicle.VehicleYear</td> <!-- Display VehicleYear -->
+                    <td>@vehicle.VehicleIDNum</td> <!-- Display VehicleIDNum -->
+                    <td>@vehicle.VehiclePlateNum</td> <!-- Display VehiclePlateNum -->
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+
+    <script>new DataTable('#vehicle-table');</script>
+</div>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
+
+

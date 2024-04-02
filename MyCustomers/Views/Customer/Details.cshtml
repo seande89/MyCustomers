@@ -1,0 +1,144 @@
+﻿@model CustomerVehicleViewModel // Specify the model type for this view
+
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+
+
+    <!-- Display customer details using a definition list -->
+    <dl class="row">
+
+
+        <dt class="col-sm-2">First Name:</dt>
+        <dd class="col-sm-10">@Model.Customer.FirstName</dd>
+
+        <dt class="col-sm-2">Last Name:</dt>
+        <dd class="col-sm-10">@Model.Customer.LastName</dd>
+
+        <dt class="col-sm-2">Address:</dt>
+        <dd class="col-sm-10">@Model.Customer.Address</dd>
+
+        <dt class="col-sm-2">Email:</dt>
+        <dd class="col-sm-10">@Model.Customer.Email</dd>
+
+        <dt class="col-sm-2">Mobile:</dt>
+        <dd class="col-sm-10">@Model.Customer.Mobile</dd>
+    </dl>
+</div>
+<td class="d-flex gap-2">
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
+        Add Vehicle
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addVehicleModalLabel">Add Vehicle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form asp-action="AddVehicle" asp-controller="Customer" method="post">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerVehicle.VehicleMakeID">Make/Brand</label> <!-- Display label for FirstName property -->
+                            <select class="form-select" asp-for=@Model.CustomerVehicle.VehicleMakeID>
+                                <option disabled value=""> Choose your Vehicle Make/Brand</option>
+                                @foreach (var make in Model.VehicleMakes)
+                                {
+                                    <option value="@make.VehicleMakeID"> @make.Brand</option>
+                                }
+                            </select> <!-- Input field for FirstName -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger"></span> <!-- Display validation message for FirstName -->
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerVehicle.VehicleModel">Model </label> <!-- Display label for FirstName property -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleModel" class="form-control" /> <!-- Input field for FirstName -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleModel" class="text-danger"></span> <!-- Display validation message for FirstName -->
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerVehicle.VehicleYear">Year</label> <!-- Display label for LastName property -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleYear" class="form-control" /> <!-- Input field for LastName -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for LastName -->
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerVehicle.VehicleIDNum">VIN/Chassis</label> <!-- Display label for Address property -->
+                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control"></textarea> <!-- Textarea for Address -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for Address -->
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.CustomerVehicle.VehiclePlateNum">License Plate</label> <!-- Display label for Email property -->
+                            <input asp-for="@Model.CustomerVehicle.VehiclePlateNum" class="form-control" /> <!-- Input field for Email -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehiclePlateNum" class="text-danger"></span> <!-- Display validation message for Email -->
+                        </div>
+
+                        <input type="hidden" asp-for="@Model.CustomerVehicle.DateCreated" value="@DateTime.Now" />
+                        <input type="hidden" asp-for="@Model.CustomerVehicle.CustomerID" value="@Model.Customer.Id" />
+
+
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Display a link to edit the customer's information -->
+    <a type="button" class="btn btn-primary" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
+        <i class="fas fa-edit"></i> Edit Customer
+    </a>
+
+
+</td>
+
+<div class="p-5">
+    <table id="vehicle" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>Make/Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>VIN/Chassis</th>
+                <th>License Plate</th>
+
+                <th></th> <!-- Add a column for action buttons -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in Model.Customer.Vehicles)
+            {
+                <tr>
+
+                    <td>@vehicle.VehicleMake.Brand</td> <!-- Display vehicle's Make/Brand -->
+                    <td>@vehicle.VehicleModel</td> <!-- Display vehicle's Model -->
+                    <td>@vehicle.VehicleYear</td> <!-- Display vehicle's Year -->
+                    <td>@vehicle.VehicleIDNum</td> <!-- Display vehicle's VIN/Chassis -->
+                    <td>@vehicle.VehiclePlateNum</td> <!-- Display vehicle's License Plate -->
+                    <td class="d-flex gap-3">
+
+                        <!-- Display a link to edit the vehicle information -->
+                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info">Edit</a>
+
+                        <!-- Create a link to delete the details of the vehicle -->
+
+                        <a asp-controller="Vehicle" asp-action="Delete" class="btn btn-danger" asp-route-id="@vehicle.VehicleID" class="btn btn-info">Delete</a>
+
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>

@@ -1,0 +1,39 @@
+﻿@model Customer // Specify the model type for this view
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Edit">
+    <!-- Specify the action to be invoked upon form submission -->
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label> <!-- Display label for FirstName property -->
+        <input asp-for="FirstName" class="form-control" /> <!-- Input field for FirstName -->
+        <span asp-validation-for="FirstName" class="text-danger"></span> <!-- Display validation message for FirstName -->
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label> <!-- Display label for LastName property -->
+        <input asp-for="LastName" class="form-control" /> <!-- Input field for LastName -->
+        <span asp-validation-for="LastName" class="text-danger"></span> <!-- Display validation message for LastName -->
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address</label> <!-- Display label for Address property -->
+        <textarea asp-for="Address" class="form-control"></textarea> <!-- Text area for Address -->
+        <span asp-validation-for="Address" class="text-danger"></span> <!-- Display validation message for Address -->
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label> <!-- Display label for Email property -->
+        <input asp-for="Email" class="form-control" /> <!-- Input field for Email -->
+        <span asp-validation-for="Email" class="text-danger"></span> <!-- Display validation message for Email -->
+    </div>
+    <div class="form-group">
+        <label asp-for="Mobile">Mobile</label> <!-- Display label for Mobile property -->
+        <input asp-for="Mobile" class="form-control" /> <!-- Input field for Mobile -->
+        <span asp-validation-for="Mobile" class="text-danger"></span> <!-- Display validation message for Mobile -->
+    </div>
+    <input type="hidden" asp-for="DateCreated" value="@Model.DateCreated" />
+    <input type="hidden" asp-for="UserId" value="1" />
+    <button type="submit" class="btn btn-primary">Save Changes</button> <!-- Submit button for form -->
+</form>
