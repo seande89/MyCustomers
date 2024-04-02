@@ -14,7 +14,7 @@ namespace MyCustomers.Controllers
             _dbContext = dbContext;
         }
 
-        // Action method to display the form for creating a new customer (HTTP GET)
+        //NEW CUSTOMER CREATION---------------------------------------------------------------------- Action method to display the form for creating a new customer (HTTP GET)
         [HttpGet]
         public IActionResult Create()
         {
@@ -39,7 +39,7 @@ namespace MyCustomers.Controllers
             return View(customer);
         }
 
-        // Action method to display details of a specific customer (HTTP GET)
+        //CUSTOMER DETAILS----------------------------------------------------------------------------- Action method to display details of a specific customer (HTTP GET)
         [HttpGet]
 
         public async Task<IActionResult> DetailsAsync(int id)
@@ -63,7 +63,7 @@ namespace MyCustomers.Controllers
 
 
 
-        // Action method to display the form for editing a customer (HTTP GET)
+        //CUSTOMER EDIT------------------------------------------------------------------------------------ Action method to display the form for editing a customer (HTTP GET)
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -116,5 +116,7 @@ namespace MyCustomers.Controllers
             return View("Details", viewModel);
 
         }
+
+
     }
 }
