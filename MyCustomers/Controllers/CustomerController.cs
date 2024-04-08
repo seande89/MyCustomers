@@ -113,7 +113,7 @@ namespace MyCustomers.Controllers
                 VehicleMakes = vehicleMakes
             };
 
-            return View("Details", viewModel);
+            return RedirectToAction("Details", new { id = customer.Id });
 
         }
 
