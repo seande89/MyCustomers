@@ -8,42 +8,45 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
 
-
-<h2>@ViewData["Title"]</h2>
-<div class="p-5">
-    <table id="customer" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Contact</th>
-                <th></th> <!-- Add a column for action buttons -->
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var customer in Model.customers)
-            {
+<div class="">
+    <h2 class="ms-3 pt-2">Customers</h2>
+    <div class="px-4 py-2">
+        <table id="customer" class="table table-striped" style="width:100%">
+            <thead>
                 <tr>
-                    <td>@customer.FirstName</td> <!-- Display customer's first name -->
-                    <td>@customer.LastName</td> <!-- Display customer's last name -->
-                    <td>@customer.Mobile</td> <!-- Display customer's mobile -->
-                    <td class="d-flex gap-3">
-
-                        <!-- Create a link to view the details of the customer -->
-                        <a asp-controller="Customer" asp-action="Details" asp-route-id="@customer.Id" class="btn btn-info">View</a>
-
-
-                    </td>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Contact</th>
+                    <th></th> <!-- Add a column for action buttons -->
                 </tr>
-            }
-        </tbody>
-    </table>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model.customers)
+                {
+                    <tr>
+                        <td>@customer.FirstName</td> <!-- Display customer's first name -->
+                        <td>@customer.LastName</td> <!-- Display customer's last name -->
+                        <td>@customer.Mobile</td> <!-- Display customer's mobile -->
+                        <td class="d-flex justify-content-end">
 
-    <script>new DataTable('#customer');</script>
+                            <!-- Create a link to view the details of the customer -->
+                            <a class="row-action" asp-controller="Customer" asp-action="Details" asp-route-id="@customer.Id" class="btn">
+                                <i class="material-icons text-secondary">visibility</i>
+                            </a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+
+        <script>new DataTable('#customer');</script>
+    </div>
+
 </div>
 
 

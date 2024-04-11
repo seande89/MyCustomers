@@ -10,25 +10,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+
+
+
+
     <div class="container-fluid">
         <div class="row">
+            <nav class="navbar bg-white">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                       <img class="header-logo" src="~/images/carconnect_logo.png" alt="App logo" />
+                        </a>
+                </div>
+            </nav>
+        </div>
+        <div class="d-flex gap-3 me-4">
             <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light pt-3 sidebar">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                                <i class="material-icons">hub</i> Car Connect
-                            </a>
-                        </li>
-                        <li class="nav-item">
+
+                        <li class="d-flex align-items-center ms-2 nav-item">
+                                <i class="material-icons">person_add</i>
                             <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Create">
-                                <i class="material-icons">person_add</i> Add Customer
+                                Add Customer
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="d-flex align-items-center ms-2 nav-item">
+                            <i class="material-icons">directions_car</i>
                             <a class="nav-link" asp-area="" asp-controller="Vehicle" asp-action="Details">
-                                <i class="material-icons">directions_car</i> Vehicles List
+                                 Vehicles
                             </a>
                         </li>
                     </ul>
@@ -36,24 +47,20 @@
             </nav>
 
             <!-- Main content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-9 col-lg-10 mt-3 rounded bg-white px-5">
                 @RenderBody()
             </main>
         </div>
     </div>
 </body>
 
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
 
-<footer class="border-top footer text-muted">
+
+@* <footer class="border-top text-muted">
     <div class="container">
         &copy; 2024 - RAZA Software
     </div>
-</footer>
+</footer> *@
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>

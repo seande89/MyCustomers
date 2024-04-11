@@ -4,9 +4,9 @@
     ViewData["Title"] = "Customer Details";
 }
 
-<h2>@ViewData["Title"]</h2>
-
 <div>
+
+    <h2 class="ms-3 pt-2">Details</h2>
 
 
     <!-- Display customer details using a definition list -->
@@ -33,7 +33,8 @@
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
-        Add Vehicle
+
+        <i class="material-icons">directions_car</i>
     </button>
 
     <!-- Modal -->
@@ -97,8 +98,9 @@
     </div>
     <!-- Display a link to edit the customer's information -->
     <a type="button" class="btn btn-primary" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
-        <i class="fas fa-edit"></i> Edit Customer
+        <i class="material-icons">edit_note</i>
     </a>
+
 
 
 </td>
@@ -130,11 +132,16 @@
                     <td class="d-flex gap-3">
 
                         <!-- Display a link to edit the vehicle information -->
-                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info">Edit</a>
+                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info">
+                            <span class="material-icons" style="color: white;">edit_note</span>
+                        </a>
 
                         <!-- Create a link to delete the details of the vehicle -->
 
-                        <a asp-controller="Vehicle" asp-action="Delete" class="btn btn-danger" asp-route-id="@vehicle.VehicleID" class="btn btn-info">Delete</a>
+                        <a asp-controller="Vehicle" asp-action="Delete" class="btn btn-danger" asp-route-id="@vehicle.VehicleID">
+                            <span class="material-icons">delete</span>
+                        </a>
+
 
 
                     </td>

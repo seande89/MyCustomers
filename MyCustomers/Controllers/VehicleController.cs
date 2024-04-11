@@ -60,5 +60,24 @@ namespace MyCustomers.Controllers
             return View(vehicle);
         }
 
+        // Action to delete a vehicle
+        [HttpPost]
+        public async Task<IActionResult> DeleteAsync(int vehicleId)
+        {
+            var vehicleToDelete = await _dbContext.Vehicles.FindAsync(vehicleId);
+            if (vehicleToDelete == null)
+            {
+                // Handle case where vehicle is not found
+                return NotFound();
+            }
+
+            _dbContext.Vehicles.Remove(vehicleToDelete);
+            await _dbContext.SaveChangesAsync();
+
+            // Redirect to the updated list of vehicles
+            return RedirectToAction(nameof(DetailsAsync));
+        }
     }
 }
+
+
