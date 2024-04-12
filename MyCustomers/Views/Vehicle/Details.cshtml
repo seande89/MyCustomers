@@ -7,6 +7,34 @@
 
 
 <div class="p-5">
+
+    <h2 class="ms-3 pt-2">Vehicles Report</h2>
+    <table id="vehicle-total-table" class="table table-striped" style="width:15%">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Total Vehicles</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var brandGroup in Model.vehicles.GroupBy(v => v.VehicleMake.Brand))
+            {
+                <tr>
+                    <td>@brandGroup.Key</td> <!-- Display Brand -->
+                    <td>@brandGroup.Count()</td> <!-- Display total count of vehicles for this brand -->
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    <script>new DataTable('#vehicle-total-table');</script>
+</div>
+
+
+
+<div class="p-5">
     <table id="vehicle-table" class="table table-striped" style="width:100%">
         <thead>
             <tr>
@@ -44,5 +72,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
+
 
 
