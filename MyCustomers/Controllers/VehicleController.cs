@@ -33,13 +33,21 @@ namespace MyCustomers.Controllers
         {
             // Retrieve the vehicle with the specified ID from the database
             var vehicle = _dbContext.Vehicles.FirstOrDefault(v => v.VehicleID == id);
+            var makes = _dbContext.VehicleMakes.ToList();
             if (vehicle == null)
             {
                 // If customer not found, return a 404 Not Found response
                 return NotFound();
+
             }
+            var viewModel = new VehicleEditViewModel
+            {
+                Vehicle = vehicle,
+
+                VehicleMakes = makes
+            };
             // Display the edit view for the vehicle
-            return View(vehicle);
+            return View(viewModel);
         }
 
         // Action method to handle form submission for editing a vehicle (HTTP POST)

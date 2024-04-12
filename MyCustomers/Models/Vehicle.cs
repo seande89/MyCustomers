@@ -27,5 +27,6 @@ namespace MyCustomers.Models
 
         [ForeignKey(nameof(VehicleMakeID))]
         public virtual VehicleMake? VehicleMake { get; set; }
+
     }
 }

@@ -5,44 +5,21 @@
 }
 
 
+<h2 class="ms-3 pt-2">Vehicles Report</h2>
 
-<div class="p-5">
-    <table id="vehicle-table" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Year</th>
-                <th>VIN/Chassis</th>
-                <th>License Plate</th>
+<div class="page-content">
+    <section class="row">
+        <div class="col-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
 
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var vehicle in Model.vehicles)
-            {
-                <tr>
-                    <td>@vehicle.VehicleMake.Brand</td> <!-- Display Brand -->
-                    <td>@vehicle.VehicleModel</td> <!-- Display VehicleModele -->
-                    <td>@vehicle.VehicleYear</td> <!-- Display VehicleYear -->
-                    <td>@vehicle.VehicleIDNum</td> <!-- Display VehicleIDNum -->
-                    <td>@vehicle.VehiclePlateNum</td> <!-- Display VehiclePlateNum -->
+                    <div>
+                        <iframe frameborder="0" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;" src="http://rs01/Reports/powerbi/RAZA/CarConnect%20Report?rs:embed=true"></iframe>
+                    </div>
 
-                </tr>
-            }
-        </tbody>
-    </table>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
-    <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
-
-    <script>new DataTable('#vehicle-table');</script>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css">
-
 
