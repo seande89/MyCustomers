@@ -33,3 +33,15 @@ a.nav-link:hover, li.nav-item > i:hover
 {
     color: #111111 !important;
 }
+
+.black-background {
+    background-color: black;
+    color: #fcfcfc;
+    /* Other styles for your button */
+}
+
+    .black-background:hover i.material-icons {
+        color: #ff0000;
+        font-weight: bold;
+        vertical-align: middle;
+    }

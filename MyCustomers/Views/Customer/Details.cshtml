@@ -32,10 +32,12 @@
 <td class="d-flex gap-2">
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
-
+    <button type="button" class="btn btn-primary black-background" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
         <i class="material-icons">directions_car</i>
     </button>
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
@@ -97,7 +99,7 @@
         </div>
     </div>
     <!-- Display a link to edit the customer's information -->
-    <a type="button" class="btn btn-primary" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
+    <a type="button" class="btn btn-primary black-background" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
         <i class="material-icons">edit_note</i>
     </a>
 
@@ -132,7 +134,7 @@
                     <td class="d-flex gap-3">
 
                         <!-- Display a link to edit the vehicle information -->
-                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info">
+                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info black-background">
                             <span class="material-icons" style="color: white;">edit_note</span>
                         </a>
 
