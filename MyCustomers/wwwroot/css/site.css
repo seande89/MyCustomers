@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #eff2ef !important;
+    background: #5f050b !important;
 }
 
 a.nav-link
@@ -19,6 +19,16 @@ a.nav-link:hover, li.nav-item > i:hover
     vertical-align: middle;
 }
 
+
+a.nav-item {
+    color: #111111;
+}
+
+    a.nav-item:hover, li.nav-item > i:hover {
+        color: #ff0000;
+        font-weight: bold;
+        vertical-align: middle;
+    }
 .header-logo
 {
     width: 100px;
@@ -29,19 +39,18 @@ a.nav-link:hover, li.nav-item > i:hover
     width: 18px;
 }
 
- i.material-icons:hover
-{
-    color: #111111 !important;
+i.material-icons:hover {
+    color: #ff0000 !important;
 }
 
 .black-background {
-    background-color: black;
-    color: #fcfcfc;
-    /* Other styles for your button */
+    background-color: white;
+    color: grey;
+
 }
 
-    .black-background:hover i.material-icons {
+.black-background:hover i.material-icons {
         color: #ff0000;
-        font-weight: bold;
+
         vertical-align: middle;
     }

@@ -32,9 +32,9 @@
 <td class="d-flex gap-2">
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary black-background" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
+    <a type="button" class="nav-item" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
         <i class="material-icons">directions_car</i>
-    </button>
+    </a>
 
 
 
@@ -98,8 +98,10 @@
             </div>
         </div>
     </div>
+
+
     <!-- Display a link to edit the customer's information -->
-    <a type="button" class="btn btn-primary black-background" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
+    <a type="button" class="nav-item" asp-controller="Customer" asp-action="Edit" asp-route-id="@Model.Customer.Id">
         <i class="material-icons">edit_note</i>
     </a>
 
@@ -134,14 +136,14 @@
                     <td class="d-flex gap-3">
 
                         <!-- Display a link to edit the vehicle information -->
-                        <a asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID" class="btn btn-info black-background">
-                            <span class="material-icons" style="color: white;">edit_note</span>
+                        <a type="button" class="nav-link" asp-controller="Vehicle" asp-action="Edit" asp-route-id="@vehicle.VehicleID">
+                            <i class="material-icons">edit_note</i>
                         </a>
 
                         <!-- Create a link to delete the details of the vehicle -->
 
-                        <a asp-controller="Vehicle" asp-action="DeleteAsync" class="btn btn-danger" asp-route-id="@vehicle.VehicleID">
-                            <span class="material-icons">delete</span>
+                        <a type="button" class="nav-link" asp-controller="Vehicle" asp-action="DeleteAsync" asp-route-id="@vehicle.VehicleID">
+                            <i class="material-icons">delete</i>
                         </a>
 
 
