@@ -8,11 +8,11 @@ namespace MyCustomers.Models
         [Key] // Specify that Id property is the primary key
         public int Id { get; set; }
 
-        [Required] // Specify that FirstName property is required
+        [Required(ErrorMessage = "Please enter First Name")] // Specify that FirstName property is required
         [StringLength(50)] // Specify maximum length of 50 characters for FirstName
         public string FirstName { get; set; }
 
-        [Required] // Specify that LastName property is required
+        [Required(ErrorMessage = "Please enter Last Name")] // Specify that LastName property is required
         [StringLength(50)] // Specify maximum length of 50 characters for LastName
         public string LastName { get; set; }
 
