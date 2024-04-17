@@ -1,15 +1,16 @@
 *{
     padding: 0;
     margin: 0;
+
 }
 
 body {
-    background: #5f050b !important;
+    background: #b4b4b4 !important;
 }
 
-a.nav-link
-{
+a.nav-link {
     color: #111111;
+
 }
 
 a.nav-link:hover, li.nav-item > i:hover
@@ -17,6 +18,7 @@ a.nav-link:hover, li.nav-item > i:hover
     color: #ff0000;
     font-weight: bold;
     vertical-align: middle;
+
 }
 
 
@@ -24,11 +26,11 @@ a.nav-item {
     color: #111111;
 }
 
-    a.nav-item:hover, li.nav-item > i:hover {
+a.nav-item:hover, li.nav-item > i:hover {
         color: #ff0000;
         font-weight: bold;
         vertical-align: middle;
-    }
+}
 .header-logo
 {
     width: 100px;
@@ -43,14 +45,5 @@ i.material-icons:hover {
     color: #ff0000 !important;
 }
 
-.black-background {
-    background-color: white;
-    color: grey;
 
-}
 
-.black-background:hover i.material-icons {
-        color: #ff0000;
-
-        vertical-align: middle;
-    }
