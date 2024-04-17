@@ -10,12 +10,12 @@
     <!-- Specify the action to be invoked upon form submission -->
     <div class="form-group">
         <label asp-for="FirstName">First Name</label> <!-- Display label for FirstName property -->
-        <input asp-for="FirstName" class="form-control" /> <!-- Input field for FirstName -->
+        <input asp-for="FirstName" class="form-control"  required/> <!-- Input field for FirstName -->
         <span asp-validation-for="FirstName" class="text-danger"></span> <!-- Display validation message for FirstName -->
     </div>
     <div class="form-group">
         <label asp-for="LastName">Last Name</label> <!-- Display label for LastName property -->
-        <input asp-for="LastName" class="form-control" /> <!-- Input field for LastName -->
+        <input asp-for="LastName" class="form-control" required /> <!-- Input field for LastName -->
         <span asp-validation-for="LastName" class="text-danger"></span> <!-- Display validation message for LastName -->
     </div>
     <div class="form-group">

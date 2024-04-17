@@ -59,27 +59,28 @@
                                     <option value="@make.VehicleMakeID"> @make.Brand</option>
                                 }
                             </select> <!-- Input field for FirstName -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger"></span> <!-- Display validation message for FirstName -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger" required></span> <!-- Display validation message for FirstName -->
                         </div>
 
                         <div class="form-group">
                             <label asp-for="@Model.CustomerVehicle.VehicleModel">Model </label> <!-- Display label for FirstName property -->
-                            <input asp-for="@Model.CustomerVehicle.VehicleModel" class="form-control" /> <!-- Input field for FirstName -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleModel" class="form-control" required /> <!-- Input field for FirstName -->
                             <span asp-validation-for="@Model.CustomerVehicle.VehicleModel" class="text-danger"></span> <!-- Display validation message for FirstName -->
                         </div>
                         <div class="form-group">
                             <label asp-for="@Model.CustomerVehicle.VehicleYear">Year</label> <!-- Display label for LastName property -->
-                            <input asp-for="@Model.CustomerVehicle.VehicleYear" class="form-control" /> <!-- Input field for LastName -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleYear" class="form-control" required min="1920" max="21024" /> <!-- Input field for LastName -->
                             <span asp-validation-for="@Model.CustomerVehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for LastName -->
                         </div>
                         <div class="form-group">
                             <label asp-for="@Model.CustomerVehicle.VehicleIDNum">VIN/Chassis</label> <!-- Display label for Address property -->
-                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control"></textarea> <!-- Textarea for Address -->
+                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control" required
+                                      pattern="[A-Z0-9]{17}" title="Please enter 17 uppercase letters or numbers"></textarea> <!-- Textarea for Address -->
                             <span asp-validation-for="@Model.CustomerVehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for Address -->
                         </div>
                         <div class="form-group">
                             <label asp-for="@Model.CustomerVehicle.VehiclePlateNum">License Plate</label> <!-- Display label for Email property -->
-                            <input asp-for="@Model.CustomerVehicle.VehiclePlateNum" class="form-control" /> <!-- Input field for Email -->
+                            <input asp-for="@Model.CustomerVehicle.VehiclePlateNum" class="form-control" required /> <!-- Input field for Email -->
                             <span asp-validation-for="@Model.CustomerVehicle.VehiclePlateNum" class="text-danger"></span> <!-- Display validation message for Email -->
                         </div>
 
