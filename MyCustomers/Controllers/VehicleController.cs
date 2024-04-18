@@ -26,6 +26,18 @@ namespace MyCustomers.Controllers
             return View("Details", viewModel);
         }
 
+        [HttpGet]
+
+        public async Task<IActionResult> Reports()
+        {
+            var viewModel = new VehiclesListViewModel()
+            {
+                vehicles = await _dbContext.Vehicles.Include(v => v.VehicleMake).ToListAsync()
+            };
+
+            return View("Reports", viewModel);
+        }
+
 
         // Action method to display the form for editing a vehicle (HTTP GET)
         [HttpGet]
