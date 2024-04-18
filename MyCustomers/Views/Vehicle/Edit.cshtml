@@ -6,7 +6,7 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<form asp-action="Edit">
+<form asp-action="Edit" style="width:500px;" method="post">
     <!-- Specify the action to be invoked upon form submission -->
 
      <div class="form-group">
@@ -43,6 +43,7 @@
         <input asp-for="Vehicle.VehicleYear" class="form-control" /> <!-- Input field for VehicleYear -->
         <span asp-validation-for="Vehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for VehicleYear -->
     </div>
+    <input type="hidden" input asp-for="Vehicle.VehicleID" value="@Model.Vehicle.VehicleID" hidden />
     <input type="hidden" asp-for="Vehicle.DateCreated" value="@Model.Vehicle.DateCreated">
     <input type="hidden" input asp-for="Vehicle.CustomerID" value="@Model.Vehicle.CustomerID" hidden />
     <button type="submit" class="btn btn-dark">Save Changes</button> <!-- Submit button for form -->

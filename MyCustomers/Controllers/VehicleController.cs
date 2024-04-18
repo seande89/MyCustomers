@@ -65,16 +65,17 @@ namespace MyCustomers.Controllers
         // Action method to handle form submission for editing a vehicle (HTTP POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Vehicle vehicle)
+        public IActionResult Edit(VehicleEditViewModel viewModel)
         {
+            var vehicle = viewModel.Vehicle;
             // Check if the submitted data is valid
-            if (ModelState.IsValid)
+            if (vehicle is not null)
             {
                 // Update the vehicle in the database
-                _dbContext.Update(vehicle);
+                _dbContext.Vehicles.Update(vehicle);
                 _dbContext.SaveChanges();
                 // Redirect to the details page of the edited customer
-                return RedirectToAction("Details", new { id = vehicle.VehicleID });
+                return RedirectToAction("Details", "Customer", new { id = vehicle.CustomerID });
             }
             // If data is not valid, return the same view with validation errors
             return View(vehicle);
