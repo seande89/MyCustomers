@@ -20,7 +20,11 @@ a.nav-link:hover, li.nav-item > i:hover
     vertical-align: middle;
 
 }
-
+.btn-dark:hover {
+        color: #ff0000;
+        font-weight: bold;
+        vertical-align: middle;
+}
 
 a.nav-item {
     color: #111111;
