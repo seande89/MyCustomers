@@ -147,9 +147,13 @@
 
                         <!-- Create a link to delete the details of the vehicle -->
 
-                        <a type="button" class="nav-link" asp-controller="Vehicle" asp-action="DeleteAsync" asp-route-id="@vehicle.VehicleID">
+                        <button class="btn nav-link text-dark" onclick="showDeletePopup(`@vehicle.VehicleID`, `@vehicle.CustomerID`)">
                             <i class="material-icons">delete</i>
-                        </a>
+                        </button>
+
+
+
+
 
 
 
@@ -159,4 +163,32 @@
             }
         </tbody>
         </table>
+
+
+
+
+
+
 </div>
+
+
+<script>
+   function showDeletePopup(id, customerId)
+    {
+        Swal.fire({
+            title: 'Delete this vehicle?',
+            text: 'You are about to delete this vehicle. You cannot undo this action.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.value) {
+                $.get('@Url.Action("Delete", "Vehicle")?id=' + id, {}, function (response) {
+                    window.location.href = "@Url.Action("Details", "Customer")?id="+customerId;
+                });
+            }
+
+        });
+    }
+</script>

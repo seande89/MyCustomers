@@ -23,7 +23,7 @@ namespace MyCustomers.Models
         [EmailAddress] // Validate Email property as a valid email address
         public string? Email { get; set; }
 
-        public int? Mobile { get; set; } // Allow Mobile property to be nullable
+        public string? Mobile { get; set; } // Allow Mobile property to be nullable
 
         public int? UserId { get; set; }
 

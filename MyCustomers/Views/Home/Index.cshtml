@@ -14,9 +14,10 @@
         <table id="customer" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Contact</th>
+                    <th class="text-left">First Name</th> <!-- Align header to the left -->
+                    <th class="text-left">Last Name</th> <!-- Align header to the left -->
+                    <th class="text-left">Email</th> <!-- Align header to the left -->
+                    <th class="text-left">Contact</th> <!-- Align header to the left -->
                     <th></th> <!-- Add a column for action buttons -->
                 </tr>
             </thead>
@@ -24,9 +25,10 @@
                 @foreach (var customer in Model.customers)
                 {
                     <tr>
-                        <td>@customer.FirstName</td> <!-- Display customer's first name -->
-                        <td>@customer.LastName</td> <!-- Display customer's last name -->
-                        <td>@customer.Mobile</td> <!-- Display customer's mobile -->
+                        <td class="text-left">@customer.FirstName</td> <!-- Align cell content to the left -->
+                        <td class="text-left">@customer.LastName</td> <!-- Align cell content to the left -->
+                        <td class="text-left">@customer.Email</td> <!-- Align cell content to the left -->
+                        <td class="text-left">@customer.Mobile</td> <!-- Align cell content to the left -->
                         <td class="d-flex justify-content-end">
 
                             <!-- Create a link to view the details of the customer -->
@@ -50,6 +52,7 @@
     </div>
 
 </div>
+
 
 
 

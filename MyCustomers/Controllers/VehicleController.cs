@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyCustomers.Models;
 
+
 namespace MyCustomers.Controllers
 {
     public class VehicleController : Controller
@@ -82,23 +83,22 @@ namespace MyCustomers.Controllers
         }
 
         // Action to delete a vehicle
-        [HttpPost]
-        public async Task<IActionResult> DeleteAsync(int vehicleId)
+        [HttpGet]
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            var vehicleToDelete = await _dbContext.Vehicles.FindAsync(vehicleId);
-            if (vehicleToDelete == null)
+            var vehicle = await _dbContext.Vehicles.FirstOrDefaultAsync(v => v.VehicleID == id);
+            // Check if the submitted data is valid
+            if (vehicle is not null)
             {
-                // Handle case where vehicle is not found
-                return NotFound();
+                // Update the vehicle in the database
+                _dbContext.Vehicles.Remove(vehicle);
+                _dbContext.SaveChanges();
+                // Redirect to the details page of the edited customer
             }
+            // If data is not valid, return the same view with validation errors
+            return RedirectToAction("Details", "Customer", new { id = vehicle.CustomerID });
 
-            _dbContext.Vehicles.Remove(vehicleToDelete);
-            await _dbContext.SaveChangesAsync();
-
-            // Redirect to the updated list of vehicles
-            return RedirectToAction(nameof(DetailsAsync));
         }
     }
+
 }
-
-
