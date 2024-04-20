@@ -69,15 +69,28 @@
                         </li>
 
                     </ul>
+
                 </div>
+
             </nav>
 
+
+
             <!-- Main content -->
-            <main class="col-md-9 col-lg-10 mt-3 rounded bg-white px-5">
+            <main class="col-md-9 col-lg-10 mt-3 rounded bg-white px-5 py-5">
                 @RenderBody()
             </main>
+
         </div>
+
     </div>
+    <footer class="border-top text-muted mt-3">
+        <div class="container">
+            Car Connect version 1.0 || &copy; 2024 - RAZA Software
+        </div>
+    </footer>
+
+
 </body>
 
 
@@ -89,15 +102,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @await RenderSectionAsync("Scripts", required: false)
 
-@*
 
 
 
-<footer class="border-top text-muted">
-    <div class="footer">
-        &copy; 2024 - RAZA Software
-    </div>
-</footer> *@
+
+
+
 
 
 </html>
