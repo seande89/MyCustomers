@@ -1,12 +1,13 @@
 ﻿@model CustomerVehicleViewModel // Specify the model type for this view
 
 @{
-    ViewData["Title"] = "Customer Details";
+    ViewData["Title"] = "Customer Information";
 }
 
 <div>
 
-    <h2 class="ms-3 pt-2">Details</h2>
+
+    <h2>@ViewData["Title"]</h2>
 
 
     <!-- Display customer details using a definition list -->
@@ -55,37 +56,36 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label asp-for="@Model.CustomerVehicle.VehicleMakeID">Make/Brand</label> <!-- Display label for FirstName property -->
+                            <label asp-for="@Model.CustomerVehicle.VehicleMakeID">Make/Brand</label> <!-- Display label for Make/Brand property -->
                             <select class="form-select" asp-for=@Model.CustomerVehicle.VehicleMakeID>
                                 <option disabled value=""> Choose your Vehicle Make/Brand</option>
                                 @foreach (var make in Model.VehicleMakes)
                                 {
                                     <option value="@make.VehicleMakeID"> @make.Brand</option>
                                 }
-                            </select> <!-- Input field for FirstName -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger" required></span> <!-- Display validation message for FirstName -->
+                            </select> 
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger" required></span> <!-- Display validation message for VehicleMakeID -->
                         </div>
 
                         <div class="form-group">
-                            <label asp-for="@Model.CustomerVehicle.VehicleModel">Model </label> <!-- Display label for FirstName property -->
-                            <input asp-for="@Model.CustomerVehicle.VehicleModel" class="form-control" required /> <!-- Input field for FirstName -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehicleModel" class="text-danger"></span> <!-- Display validation message for FirstName -->
+                            <label asp-for="@Model.CustomerVehicle.VehicleModel">Model </label> <!-- Display label for VehicleModel property -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleModel" class="form-control" required /> <!-- Input field for VehicleModel -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleModel" class="text-danger"></span> <!-- Display validation message for VehicleModel -->
                         </div>
                         <div class="form-group">
-                            <label asp-for="@Model.CustomerVehicle.VehicleYear">Year</label> <!-- Display label for LastName property -->
-                            <input asp-for="@Model.CustomerVehicle.VehicleYear" class="form-control" required min="1920" max="21024" /> <!-- Input field for LastName -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for LastName -->
+                            <label asp-for="@Model.CustomerVehicle.VehicleYear">Year</label> <!-- Display label for VehicleYear property -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleYear" class="form-control" required min="1920" max="2124" /> <!-- Input field for VehicleYear -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for VehicleYear -->
                         </div>
                         <div class="form-group">
-                            <label asp-for="@Model.CustomerVehicle.VehicleIDNum">VIN/Chassis</label> <!-- Display label for Address property -->
-                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control" required
-                                      pattern="[A-Z0-9]{17}" title="Please enter 17 uppercase letters or numbers"></textarea> <!-- Textarea for Address -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for Address -->
+                            <label asp-for="@Model.CustomerVehicle.VehicleIDNum">VIN/Chassis</label> <!-- Display label for VehicleIDNum property -->
+                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control" required pattern="[A-Z0-9]{17}" title="Please enter 17 uppercase letters or numbers"></textarea> <!-- Input field for VehicleIDNum -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for VehicleIDNum -->
                         </div>
                         <div class="form-group">
-                            <label asp-for="@Model.CustomerVehicle.VehiclePlateNum">License Plate</label> <!-- Display label for Email property -->
-                            <input asp-for="@Model.CustomerVehicle.VehiclePlateNum" class="form-control" required /> <!-- Input field for Email -->
-                            <span asp-validation-for="@Model.CustomerVehicle.VehiclePlateNum" class="text-danger"></span> <!-- Display validation message for Email -->
+                            <label asp-for="@Model.CustomerVehicle.VehiclePlateNum">License Plate</label> <!-- Display label for VehiclePlateNum property -->
+                            <input asp-for="@Model.CustomerVehicle.VehiclePlateNum" class="form-control" required /> <!-- Input field for VehiclePlateNum -->
+                            <span asp-validation-for="@Model.CustomerVehicle.VehiclePlateNum" class="text-danger"></span> <!-- Display validation message for VehiclePlateNum -->
                         </div>
 
                         <input type="hidden" asp-for="@Model.CustomerVehicle.DateCreated" value="@DateTime.Now" />
