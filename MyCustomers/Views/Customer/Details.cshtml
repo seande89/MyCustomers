@@ -38,7 +38,7 @@
 
     <!-- Button trigger modal -->
     <a type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addVehicleModal">
-      Add Vehicle
+      New Vehicle
     </a>
 
 
@@ -63,7 +63,7 @@
                                 {
                                     <option value="@make.VehicleMakeID"> @make.Brand</option>
                                 }
-                            </select> 
+                            </select>
                             <span asp-validation-for="@Model.CustomerVehicle.VehicleMakeID" class="text-danger" required></span> <!-- Display validation message for VehicleMakeID -->
                         </div>
 
@@ -79,7 +79,7 @@
                         </div>
                         <div class="form-group">
                             <label asp-for="@Model.CustomerVehicle.VehicleIDNum">VIN/Chassis</label> <!-- Display label for VehicleIDNum property -->
-                            <textarea asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control" required pattern="[A-Z0-9]{17}" title="Please enter 17 uppercase letters or numbers"></textarea> <!-- Input field for VehicleIDNum -->
+                            <input asp-for="@Model.CustomerVehicle.VehicleIDNum" class="form-control" required pattern="[A-Z0-9]{17}" title="Please enter 17 uppercase letters or numbers"></input> <!-- Input field for VehicleIDNum -->
                             <span asp-validation-for="@Model.CustomerVehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for VehicleIDNum -->
                         </div>
                         <div class="form-group">
