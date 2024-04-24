@@ -4,43 +4,6 @@
     ViewData["Title"] = "Edit Customer";
 }
 
-@*   <div class="text-center">
-    <h2>@ViewData["Title"]</h2>
-</div> *@
-
-@* <form asp-action="Edit" style="max-width: 500px; margin: 0 auto;">
-    <!-- Specify the action to be invoked upon form submission -->
-    <div class="form-group">
-
-        <label for="FirstName">First Name </label> <!-- Display label for FirstName property -->
-        <input id="FirstName" asp-for="FirstName" class="form-control" required/> <!-- Input field for FirstName -->
-        <span asp-validation-for="FirstName" class="text-danger"></span> <!-- Display validation message for FirstName -->
-    </div>
-    <div class="form-group">
-        <label for="LastName">Last Name</label> <!-- Display label for LastName property -->
-        <input id="LastName" asp-for="LastName" class="form-control" required/> <!-- Input field for LastName -->
-        <span asp-validation-for="LastName" class="text-danger"></span> <!-- Display validation message for LastName -->
-    </div>
-    <div class="form-group">
-        <label for="Address">Address</label> <!-- Display label for Address property -->
-        <textarea id="Address" asp-for="Address" class="form-control" rows="3"></textarea> <!-- Text area for Address -->
-        <span asp-validation-for="Address" class="text-danger"></span> <!-- Display validation message for Address -->
-    </div>
-    <div class="form-group">
-        <label for="Email">Email</label> <!-- Display label for Email property -->
-        <input id="Email" asp-for="Email" type="email" class="form-control" /> <!-- Input field for Email -->
-        <span asp-validation-for="Email" class="text-danger"></span> <!-- Display validation message for Email -->
-    </div>
-    <div class="form-group">
-        <label for="Mobile">Mobile</label> <!-- Display label for Mobile property -->
-        <input id="Mobile" asp-for="Mobile" class="form-control" required/> <!-- Input field for Mobile -->
-        <span asp-validation-for="Mobile" class="text-danger"></span> <!-- Display validation message for Mobile -->
-    </div>
-    <input type="hidden" asp-for="DateCreated" value="@Model.DateCreated" />
-    <input type="hidden" asp-for="UserId" value="1" />
-    <button type="submit" class="btn btn-dark btn-block my-3">Save Changes</button> <!-- Submit button for form -->
-</form>
-  *@
 
 
 
@@ -92,8 +55,8 @@
                             </div>
                             <div class="col-md-10 col-lg-6 order-1 order-lg-2">
                                 <div class="d-flex justify-content-center align-items-center">
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                         class="img-fluid" alt="Sample image">
+                                    <img src="~/images/pablo-973.png"
+                                         class="img-fluid" alt="pablo image">
                                 </div>
                             </div>
                         </div>

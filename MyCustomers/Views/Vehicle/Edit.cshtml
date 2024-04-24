@@ -4,52 +4,7 @@
     ViewData["Title"] = "Edit Vehicle";
 }
 
-@* <div class="text-center">
-    <h2>@ViewData["Title"]</h2>
-</div>
 
- <form asp-action="Edit" style="max-width: 500px; margin: 0 auto;method="post">
-    <!-- Specify the action to be invoked upon form submission -->
-
-     <div class="form-group">
-        <label asp-for="@Model.Vehicle.VehicleMakeID">Make/Brand</label> <!-- Display label for Make/Brand property -->
-        <select class="form-select" asp-for="@Model.Vehicle.VehicleMakeID">
-            <option disabled value="">Choose your Vehicle Make/Brand</option>
-            @foreach (var make in Model.VehicleMakes)
-            {
-                <option value="@make.VehicleMakeID">@make.Brand</option>
-            }
-        </select>
-
-        <span asp-validation-for="@Model.Vehicle.VehicleMakeID" class="text-danger"></span> <!-- Display validation message for VehicleMakeID -->
-    </div>
-    <div class="form-group">
-        <label asp-for="Vehicle.VehicleModel">VehicleModel</label> <!-- Display label for VehicleModel property -->
-        <input asp-for="Vehicle.VehicleModel" class="form-control" /> <!-- Input field for VehicleModel -->
-        <span asp-validation-for="Vehicle.VehicleModel" class="text-danger"></span> <!-- Display validation message for VehicleModel -->
-    </div>
-    <div class="form-group">
-        <label asp-for="Vehicle.VehicleIDNum">VehicleIDNum</label> <!-- Display label for VehicleIDNum property -->
-        <input asp-for="Vehicle.VehicleIDNum" class="form-control" /> <!-- Input field for VehicleIDNum -->
-        <span asp-validation-for="Vehicle.VehicleIDNum" class="text-danger"></span> <!-- Display validation message for VehicleIDNum -->
-    </div>
-    <div class="form-group">
-        <label asp-for="Vehicle.VehiclePlateNum">VehiclePlateNum</label> <!-- Display label for VehiclePlateNum property -->
-        <input asp-for="Vehicle.VehiclePlateNum" class="form-control" /> <!-- Input field for VehiclePlateNum -->
-        <span asp-validation-for="Vehicle.VehiclePlateNum" class="text-danger"></span> <!-- Display validation message for VehiclePlateNum -->
-    </div>
-
-
-    <div class="form-group">
-        <label asp-for="Vehicle.VehicleYear">VehicleYear</label> <!-- Display label for VehicleYear property -->
-        <input asp-for="Vehicle.VehicleYear" class="form-control" /> <!-- Input field for VehicleYear -->
-        <span asp-validation-for="Vehicle.VehicleYear" class="text-danger"></span> <!-- Display validation message for VehicleYear -->
-    </div>
-    <input type="hidden" input asp-for="Vehicle.VehicleID" value="@Model.Vehicle.VehicleID" hidden />
-    <input type="hidden" asp-for="Vehicle.DateCreated" value="@Model.Vehicle.DateCreated">
-    <input type="hidden" input asp-for="Vehicle.CustomerID" value="@Model.Vehicle.CustomerID" hidden />
-    <button type="submit" class="btn btn-dark my-2">Save Changes</button> <!-- Submit button for form -->
-</form>  *@
 
 <section class="vh-100 d-flex justify-content-center align-items-center" style="background-color: #eee;">
     <div class="container">
@@ -106,7 +61,11 @@
                                 </form>
 
                             </div>
-
+                            <div class="col-md-10 col-lg-6 order-1 order-lg-2">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="~/images/pablo-car.png"
+                                         class="img-fluid" alt="pablo car image">
+                                </div>
                         </div>
                     </div>
                 </div>
